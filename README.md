@@ -13,10 +13,16 @@ Amandeep Kaur, Haotian Ye and Ashiv Rao Dhondea.
 ### Latex files for this report
 The LaTeX template used to produce this report was partially developed by **Hans Dhondea**. The main file <code>main.tex</code> can be compiled with the commands:
 <code>pdflatex main.tex</code>
+
 <code>bibtex main.tex</code>
+
 <code>makeglossaries main.tex</code>
+
 <code>pdflatex main.tex</code>
+
 <code>pdflatex main.tex</code>
+
+Please cite this repo if you make use of our template.
 
 * **Hans Dhondea** - *Initial work* - [AshivDhondea](https://github.com/AshivDhondea)
 
