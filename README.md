@@ -12,6 +12,7 @@ Amandeep Kaur, Haotian Ye and Ashiv Rao Dhondea.
 
 ### Latex files for this report
 The LaTeX template used to produce this report was partially developed by **Hans Dhondea**. The main file <code>main.tex</code> can be compiled with the commands:
+
 <code>pdflatex main.tex</code>
 
 <code>bibtex main.tex</code>
