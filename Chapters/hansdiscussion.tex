@@ -1,0 +1,76 @@
+\chapter{Discussion and Conclusion} \label{chapter:discussion}
+
+%\hl{DISCUSSION AND CONCLUSIONS
+%Provide a short summary of the project. Describe what made it a non-trivial task and what were the difficulties. Suggest alternative approaches to the solution. Suggest improvements and future work.}
+
+Section \ref{sec:discussion} reviews the experiments conducted in Chapter \ref{chapter:simul}. Then Section \ref{sec:conc} outlines how the goals of this project were achieved. Finally, Section \ref{sec:recommendations} puts forth our recommendations for future work.
+
+\section{Discussion} \label{sec:discussion}
+The main aim of this project has been to simulate Youtube video streaming over \gls{WiFi} with a discrete network simulator. To accomplish this aim, a number of scenarios featuring \gls{WiFi} links and applications for YouTube streaming were created and simulated in Riverbed Modeler. The work done in this project can be summarized in detailed terms as follows:
+
+\begin{itemize}
+	\item Scenario 1: Light browsing, heavy browsing and video streaming.  \\
+	Scenario 1 in Subsection \ref{subsec:riverbed:1} served as learning step in this project. It investigated how the throughput and delay experienced by a streaming client are affected by the type of browsing done. While the results presented may seem intuitive at a first glance, they serve as sanity check to confirm that we were on the right path in this project.
+	\item Scenario 2: Effect of using different video streaming resolutions.\\
+	Scenario 2 in Subsection \ref{subsec:riverbed:2} compared the performance of streaming at 720p to streaming at 1080p.
+	This was implemented by changing the page inter-arrival time attribute in our Riverbed Modeler simulation. The longer page inter-arrival time of YouTube 1080p compared to YouTube 720p leads to a higher frame. This results in higher throughput experienced by the streaming client.  In addition, due to the higher frame rate demanded by 1080p, the delay experienced by the client is higher in this case.
+	\item Scenario 3: Effect of frequency band, data rate and \gls{WiFi} technology employed.\\
+	Scenario 3 in Subsection \ref{subsec:riverbed:3} focused solely on the 1080p streaming node. It investigated three aspects: \begin{itemize}
+		\item the impact of the \gls{WiFi} technology employed (either \gls{IEEE802}g or n.)\\	With the same data rate, the performance with \gls{IEEE802}g and \gls{IEEE802}n were observed. The improved throughput and delay experienced with \gls{IEEE802}n is more likely thanks to its higher data rate of $26~\mathrm{Mbps}$ compared to the $24~\mathrm{Mbps}$ data rate of \gls{IEEE802}g. 
+		\item the effect of the frequency band ($2.4~\mathrm{GHz}$ or $5~\mathrm{GHz}$) exploited.\\
+		The dual-band capable \gls{IEEE802}n technology was employed for this case. The average delay experienced in the two frequency bands was found to be very similar. Within the parameters of this experiment (few users sharing the \gls{WiFi} resource, negligible range between client and router), the delay performance is independent of the choice of frequency band.
+		\item the effect of changing the data rate.\\
+		With higher data rates, the client enjoys higher throughput and lower delay and therefore better overall \gls{QoS}.
+	\end{itemize}
+	\item Scenario 4: Effect of varying the range to the \gls{WiFi} access point. \\
+	Scenario 4 investigated how the physical characteristics, data rate and \gls{IEEE802} technology employed affect the \gls{QoS} experienced by the streaming client when they are located further away from the router. For an unexplained reason, the client had no throughput when a data rate of $65~\mathrm{Mbps}$ was employed. We suspect that we made a mistake in our simulation but we have not yet been able to debug this issue. With a higher data rate of $39~\mathrm{Mbps}$ versus $26~\mathrm{Mbps}$, the streaming client enjoys better \gls{QoS} even when located further away from the router. The streaming client enjoys mostly the same average throughputs in either of the frequency bands provided the same data rate is available. When a client streams in the $5~\mathrm{GHz}$ band, it experiences a higher average delay than when operating in the $2.4~\mathrm{GHz}$ band. This is explained by the more significant power attenuation of radio signals of high frequency due to range. These phenomena are observed when the range to the \gls{WiFi} transmitter is higher but not when the range is negligible as was found previously. Finally, when the \gls{IEEE802}g technology is employed, the client experiences much lower average data dropped than when any other \gls{IEEE802}n configuration is used. This results comes with the caveat that the streaming client did not have to share the \gls{WiFi} connection with a large number of co-hosts in our experiments.
+	
+\end{itemize}
+
+%In scenario one, we did a simulation in which there are multiple users browsing the Internet in one local area network. We first compared the average throughput of light browsing with that of heavy browsing, and found that heavy browsing has much higher throughput value than light browsing. Then, we introduced the video streaming which has the highest throughput value in all of three applications. We also compared the average delay between these three applications. It is clear to see that both video streaming and heavy browsing have much higher delay than light browsing. We can conclude that delay is proportional to throughput since it would take longer time to transmit as there are more packets in the application. 
+%
+%In scenario two, we did a comparison between performance of Youtube 720p and 1080 by changing their page-interarrival time attribute. Youtube 1080p has higher throughput than youtube 720p since Youtube 1080p has a higher frame rate than youtube 720p. This means that Youtube 1080p can show more frame contents per unit time. In addition, youtube 1080p has higher delay than youtube 720p because delay is highly related to throughput. Finally, the average data traffic received by youtube 1080p is more than youtube 720p received. The reason is also because Youtube 1080p higher frame rate and the server needs to send more information to youtube 1080p video. 
+%
+%In scenario 3, focus was particularly on performance of YouTube 1080p. While keeping the same data rate the effect of 802.11g and 802.11n was observed. It showed that 802.11n has higher throughput and lesser delay because it has MIMO feature, which is absent in other standards. On the other hand changing frequency does not show any effect on throughput and delay because YouTube 1080p node was placed very close to the router. In addition, keeping all parameters same except data rate showed that 65Mbps has high throughput and less delay compared to that of 26Mbps. That difference is due to more data load per unit time.
+%
+%In scenario 4, the effect of distance was observed on performance of YouTube 1080p. Higher data rate of 65Mbps at longer distance showed no throughput whereas, high throughput and less delay was seen in case of 39 Mbps as compared to that of 26Mbps. Moreover, at longer distance 2.4GHz and 5GHz showed similar throughput but delay was higher in case of 5GHz because of its shorter wavelength.
+
+\section{Conclusions} \label{sec:conc}
+In light of the foregoing discussion in Section \ref{sec:discussion}, we reach the following conclusions.
+
+\begin{itemize}
+	\item Scenario 1: Light browsing, heavy browsing and video streaming.  \\
+	When the client browses small files over the Internet, the throughput and delay are less significant. When browsing large files, the client used more data and hence more throughput was required. 
+	\item  Scenario 2: Effect of using different video streaming resolutions.\\
+	From the results of scenario 2, it is clear that a higher resolution demanded by the client and consequently, a higher frame rate will result in better performance and will give high throughput, as in the case of YouTube 1080p.
+	\item Scenario 3: Effect of frequency band, data rate and \gls{WiFi} technology employed.\\
+	At negligible ranges to the router, the choice of frequency band has no impact on the \gls{QoS} experienced by the streaming client. Secondly, \gls{IEEE802}n and high data rates lead to better streaming performance on the streaming client side.
+	\item Scenario 4: Effect of varying the range to the \gls{WiFi} access point. \\
+	Due to its shorter wavelength, \gls{WiFi} at $5~\mathrm{GHz}$ gives worse \gls{QoS} than at $2.4~\mathrm{GHz}$ when the \gls{WiFi} user is at an appreciable range from the router. \gls{IEEE802}g has more stable performance than \gls{IEEE802}n when the client is located further away from the router.
+\end{itemize}
+
+%From the results we have concluded that when we browse small files over the internet, it showed lesser throughput and delay but for browsing large files, the system used more data and hence more throughput. Whereas, when we stream a video it loads even more data and that’s why it showed the highest throughput.
+%
+%It is clear from the results of scenario 2 that high resolution and high frame rate will result in better performance and will give high throughput, as in the case of YouTube 1080p.
+%
+%By changing different parameters in scenario 3, firstly we can say  that frequency does not affect the performance of YouTube 1080p at close distance from the router. Secondly, 802.11n and high data rate are suitable for getting better performance.
+%
+%Comparisons made in scenario 4, reflect that due to shorter wavelength, 5GHz do not perform well at longer distance from the router.
+
+Our project is non-trivial because we implemented thorough simulations exploring browsing the Internet and streaming videos using \gls{WiFi}. To ensure that our simulations can be related to real-life situations, we selected four specific scenarios to replicate the breadth of the experience of a single client browsing on the Internet and streaming YouTube videos in their residence using a \gls{WiFi} network. The main difficulty that we faced is that Academic Edition of Riverbed Modeler did not allow us to import trace file into simulations and that we could not use the \gls{DASH} functionality to more accurately simulated video streaming.
+
+\section{Recommendations} \label{sec:recommendations}
+Following the conclusions drawn in Section \ref{sec:conc}, we put forth the following recommendations for future work:
+\begin{itemize}
+	\item Increase the complexity of the Riverbed Modeler simulations by adding more nodes. \\
+	Due to the duration of our simulations, we were not able to include additional clients in the \gls{WLAN}. It would be beneficial to incorporate additional users in the simulations as in real-life situations, it is very likely that several users will be sharing a \gls{WiFi} connection. Furthermore, mobility nodes can be added since many \gls{WiFi} clients are smartphones and tablets which are mobile.	
+	
+	\item Implement the simulation scenarios using \gls{ns3}. \\ 
+	The discrete network event simulator \gls{ns3} has an \gls{lte} module and a \gls{DASH} module. This means that \gls{ns3} can be used to create a more realistic simulation of YouTube streaming by employing the \gls{DASH} module. Furthermore, given the ever-growing popularity of \gls{lte} as technology, it would be beneficial to investigate YouTube video streaming using \gls{lte} and potentially do a comparison with using \gls{WiFi}.
+	
+	\item If a professional version of Riverbed Modeler is available, it is recommended to import YouTube streaming trace files generated with Wireshark. Several trace files of streaming at various resolutions (480p, 720p, 1080p and 2160p). Furthermore, the \gls{DASH} functionality of the full version of Riverbed Modeler may be exploited to develop simulations which replicate the actual technology employed by YouTube. Finally, System-In-The-Loop simulations can be done with a full version of Riverbed Modeler to have real-world results, instead of relying on simulated results.	
+	
+\end{itemize}
+
+
+%Through our in depth analysis of our network, it has been determined that the applications with the highest throughput (i.e. the video stream), has the greatest impact on the QoS of the network. This means that all other users in the network will experience delay and jitter which follows the high-throughput application. In a home network, some applications are very sensitive to a low QoS such as gamers and VoIP users. To improve the QoS of these users, two different methods can be deployed. First of all, data rates can be increased to reduce the overall delay of the network. However, this does not eliminate spikes in throughput, which was introduced by the video stream user. Also, increasing data rates may be difficult, as some protocols such as 802.11b can only support up to 11 Mbps. This could mean users would have to purchase new and better routers to obtain higher data rates and access certain QoS parameters. By upgrading to 802.11e, both the delay and the delay spikes can be effectively negated, by setting higher priorities to applications which are more sensitive to low QoS. It might be thought that 802.11e would increase the delay to the lower priority application, however from our results, it has been shown that increases in delay to the low priority application (in this case the Video Streamer) are negligible.

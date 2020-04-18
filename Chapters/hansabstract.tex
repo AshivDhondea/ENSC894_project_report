@@ -1,0 +1,15 @@
+\addcontentsline{toc}{chapter}{Abstract}
+
+\chapter*{Abstract}
+
+Video streaming is quickly becoming the most common use case for Internet traffic globally. The dominant real-time entertainment service supplier, YouTube, with $23.4\%$ of the daily traffic in North America \cite{sandvinereport}, employs \gls{HTTP} adaptive streaming, \gls{DASH}. This is made possible with the ever-increasing Quality of Service (\gls{QoS}) and bandwidth capabilities of today's Internet. Technologies used by hosts for video streaming include Ethernet, \gls{WiFi} and \gls{lte} (Long Term Evolution). The popularity of Ethernet is waning as more and more people make use of mobile devices and laptops which do not possess Ethernet ports. Video streaming over \gls{lte} is gaining traction in North America as people opt to do their YouTube or Netflix streaming while commuting to work or traveling. While \gls{lte} poses interesting challenges to video streaming, it was not investigated in this report because our version of \textit{Riverbed Modeler}, the \textit{Academic Edition version 17.5}, does not allow the use of \gls{lte} technology. \gls{WiFi} is now available on university campuses, schools, coffee shops, shopping malls, restaurants and even on public transit in some countries. It has become ubiquitous and it is therefore a good choice of technology to investigate in this report.
+
+We make use of \textit{Riverbed Modeler} to simulate various scenarios and record useful statistics such as throughput and packet delay to see how \gls{WiFi} performs for video streaming. The platform chosen is YouTube because it is the dominant entertainment service supplier. We show results of simulations in which the video display resolutions was varied from 7200p (720 pixels, progressive scan) to 1080p.
+
+%
+%This is made possible with the high Quality of Service (\gls{QoS}) and the high bandwidth capabilities of \gls{lte} (Long Term Evolution). \cite{8329138} Given the popularity of YouTube streaming using \gls{lte} in North America, it is worthwhile to study the performance of YouTube video streaming in \gls{lte} using a simulator. The discrete event simulator ns-3 is used in this project because it already possesses an \gls{lte} module \cite{ns3nlte} and because an \gls{HTTP} Adaptive Streaming generator framework has been proposed in \cite{maza2016framework} for YouTube video streaming. Prados-Garzon et al. studied the performance of YouTube service in \gls{lte} using a Matlab simulation in \cite{6583422}. Our motivation in developing a simulation of YouTube service in \gls{lte} using \gls{ns3} is that \gls{ns3} is a free, open-source simulator which is commonly-used for computer networks performance analysis.
+
+
+
+
+\clearpage
