@@ -1,0 +1,18 @@
+\chapter{Source files for the project} \label{appendix:a}
+
+In an effort to contribute to replicability in academic research and development, we provide our \textit{Riverbed Modeler} simulation files and source files for our reports. The links provided here are also included on our project website at \url{http://www.sfu.ca/~hdhondea/ENSC894Group2.html}.
+
+\section{Riverbed Modeler simulations}
+Our Riverbed Modeler simulations files can be found at \url{https://drive.google.com/open?id=1jkT0fj6gilaaUDCpsAAJ6afOg3kQ6gfL}.
+
+\section{Report}
+This report was typeset using \LaTeX. It can be reproduced by cloning the \textit{GitHub} repository at \url{https://github.com/AshivDhondea/ENSC894_project_report} and compiling the script \verb|main.tex| with the following command sequence:
+\begin{enumerate}
+	\item \verb|PDFLaTeX|
+	\item \verb|Bibtex|
+	\item \verb|PDFLaTeX|
+	\item \verb|PDFLaTeX|
+	\item \verb|Makeglossaries|
+	\item \verb|PDFLaTeX|
+	\item \verb|PDFLaTeX|
+\end{enumerate}
